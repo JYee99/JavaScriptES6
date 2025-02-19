@@ -15,7 +15,9 @@
 - [5. Array & Object](#5-array--object)
 - [6. 스코프](#6-스코프)
 - [7. 호이스팅](#7-호이스팅)
-- [8. ES6 추가 기능](#8-es6-추가-기능)
+- [8. this](#8-this)
+- [9. Call & Apply & Bind](#8-call--apply--bind)
+- [ES6 추가 기능](#es6-추가-기능)
 
 ---
 
@@ -232,7 +234,64 @@ let second;
   </tbody>
 </table>
 
-## 8. ES6 추가 기능
+## 8. this
+
+**모든 실행 컨텍스트에 만들어지는 특별한 변수**
+**this는 static하지 않다. 함수가 호출될 때만 값이 할당**
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>this</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>메서드</td>
+      <td>메서드를 호출하는 오브젝트</td>
+    </tr>
+    <tr>
+      <td>간단한 함수 호출</td>
+      <td>Chrome: undefined 
+      <br>
+      (*strinct mode 기준)
+      <br>
+      Node.js: global Object
+      </td>
+    </tr>
+    <tr>
+      <td>화살표 함수</td>
+      <td>둘러싸고 있는 함수 <br>
+      (어휘적 this)
+      </td>
+    </tr>
+    <tr>
+      <td>이벤트 리스너</td>
+      <td>핸들러가 붙어있는 DOM 이벤트</td>
+    </tr>
+  </tbody>
+</table>
+
+## 9. Call & Apply & Bind
+
+- **call**
+
+  - 함수를 호출하는 함수
+  - 첫 번째 인자에 this로 세팅하고 싶은 객체를 넘김
+  - 나머지 인자를 입력
+
+- **apply**
+
+  - 함수를 호출하는 함수
+  - 첫 번째 인자에 this로 세팅하고 싶은 객체를 넘김
+  - 나머지 인자를 **배열**로 입력
+
+- **bind**
+  - 함수를 실행하지 않고 리턴
+  - 나머지 인자는 call, apply와 동일
+
+## ES6 추가 기능
 
 ES6에서는 위에서 다룬 내용 외에도 자바스크립트의 생산성과 가독성을 높여주는 다양한 기능이 추가되었습니다.
 
